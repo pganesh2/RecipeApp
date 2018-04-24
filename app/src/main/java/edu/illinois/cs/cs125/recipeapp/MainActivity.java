@@ -18,6 +18,16 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Protein));
         proteinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         proteinSpinner.setAdapter(proteinAdapter);
+
+
+        Spinner veggieSpinner = findViewById(R.id.veggieList);
+
+        ArrayAdapter<String> veggieAdapter = new ArrayAdapter<String>(MainActivity.this,
+                android.R.layout.simple_list_item_2, getResources().getStringArray(R.array.Veggies));
+        proteinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        proteinSpinner.setAdapter(veggieAdapter);
+
+
     }
 
 

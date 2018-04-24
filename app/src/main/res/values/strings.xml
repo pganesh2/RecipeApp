@@ -6,5 +6,25 @@
         <item>Pork</item>
         <item>Beef</item>
         <item>Tofu</item>
+        <item>Lamb</item>
     </string-array>
+
+    <string-array name="Veggies">
+        <item>Tomato</item>
+        <item>Spinach</item>
+        <item>Broccoli</item>
+        <item>Green Beans</item>
+        <item>Cucumber</item>
+        <item>Bell Peppers</item>
+        <item>Brussel Sprouts</item>
+        <item>Carrots</item>
+        <item>Coriander</item>
+        <item>Cabbage</item>
+        <item>Cauliflower</item>
+        <item>Corn</item>
+        <item>Leeks</item>
+        <item>Potatoes</item>
+
+    </string-array>
+
 </resources>
