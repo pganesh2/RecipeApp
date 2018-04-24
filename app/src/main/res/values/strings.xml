@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecipeApp</string>
+
+    <string-array name="Protein">
+        <item>Chicken</item>
+        <item>Pork</item>
+        <item>Beef</item>
+        <item>Tofu</item>
+    </string-array>
+</resources>
