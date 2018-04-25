@@ -9,64 +9,30 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="69dp"
-        android:layout_height="28dp"
+        android:layout_width="77dp"
+        android:layout_height="27dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:fontFamily=""
         android:text="Selected"
         android:textAppearance="@android:style/TextAppearance.Material.Button"
+        app:fontFamily="@font/comfortaa_light"
         app:layout_constraintEnd_toEndOf="@+id/first"
         app:layout_constraintStart_toStartOf="@+id/first"
         app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView2"
         android:layout_width="77dp"
-        android:layout_height="17dp"
-        android:text="Spices"
-        app:layout_constraintBottom_toTopOf="@+id/spicesList"
-        app:layout_constraintStart_toStartOf="@+id/spicesList" />
-
-    <ImageButton
-        android:id="@+id/delete3"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/third"
-        app:layout_constraintEnd_toEndOf="@+id/delete2"
-        app:layout_constraintTop_toTopOf="@+id/third"
-        app:layout_constraintVertical_bias="0.705"
-        app:srcCompat="@android:drawable/btn_dialog" />
-
-    <TextView
-        android:id="@+id/third"
-        android:layout_width="93dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="48dp"
-        android:text="@string/ingredient2"
-        app:layout_constraintStart_toStartOf="@+id/second"
-        app:layout_constraintTop_toBottomOf="@+id/second" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="77dp"
-        android:layout_height="17dp"
-        android:text="Vegetables"
-        app:layout_constraintBottom_toTopOf="@+id/veggieList"
-        app:layout_constraintStart_toStartOf="@+id/veggieList" />
-
-    <ImageButton
-        android:id="@+id/delete1"
-        android:layout_width="36dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/first"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/first"
-        app:layout_constraintVertical_bias="0.705"
-        app:srcCompat="@android:drawable/btn_dialog" />
+        android:layout_height="21dp"
+        android:text="Protein"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        app:fontFamily="@font/comfortaa_light"
+        app:layout_constraintBottom_toTopOf="@+id/proteinList"
+        app:layout_constraintStart_toStartOf="@+id/proteinList" />
 
     <Spinner
         android:id="@+id/proteinList"
@@ -78,34 +44,24 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:dropDownWidth="match_parent"
+        app:fontFamily="@font/comfortaa_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Spinner
-        android:id="@+id/spicesList"
-        android:layout_width="186dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:dropDownWidth="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.126"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/veggieList" />
-
-    <Spinner
-        android:id="@+id/veggieList"
-        android:layout_width="183dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="32dp"
-        android:dropDownWidth="match_parent"
-        app:layout_constraintStart_toStartOf="@+id/proteinList"
-        app:layout_constraintTop_toBottomOf="@+id/proteinList" />
+    <TextView
+        android:id="@+id/first"
+        android:layout_width="85dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/entered_text"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/proteinList"
+        app:layout_constraintTop_toTopOf="@+id/proteinList"
+        app:layout_constraintVertical_bias="0.074" />
 
     <View
         android:id="@+id/divider2"
@@ -122,17 +78,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/first"
-        android:layout_width="85dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/entered_text"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/proteinList"
-        app:layout_constraintTop_toTopOf="@+id/proteinList"
-        app:layout_constraintVertical_bias="0.074" />
+        android:id="@+id/textView3"
+        android:layout_width="77dp"
+        android:layout_height="17dp"
+        android:text="Vegetables"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        app:fontFamily="@font/comfortaa_light"
+        app:layout_constraintBottom_toTopOf="@+id/veggieList"
+        app:layout_constraintStart_toStartOf="@+id/veggieList" />
+
+    <Spinner
+        android:id="@+id/spicesList"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:dropDownWidth="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:fontFamily="@font/comfortaa_light"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/veggieList" />
 
     <TextView
         android:id="@+id/second"
@@ -145,6 +115,38 @@
         app:layout_constraintTop_toTopOf="@+id/veggieList"
         app:layout_constraintVertical_bias="0.07" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="77dp"
+        android:layout_height="17dp"
+        android:text="Spices"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        app:fontFamily="@font/comfortaa_light"
+        app:layout_constraintBottom_toTopOf="@+id/spicesList"
+        app:layout_constraintStart_toStartOf="@+id/spicesList" />
+
+    <Spinner
+        android:id="@+id/veggieList"
+        android:layout_width="183dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="32dp"
+        android:dropDownWidth="match_parent"
+        app:fontFamily="@font/comfortaa_light"
+        app:layout_constraintStart_toStartOf="@+id/proteinList"
+        app:layout_constraintTop_toBottomOf="@+id/proteinList" />
+
+    <ImageButton
+        android:id="@+id/delete1"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/first"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
     <ImageButton
         android:id="@+id/delete2"
         android:layout_width="36dp"
@@ -155,9 +157,29 @@
         app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@android:drawable/btn_dialog" />
 
+    <TextView
+        android:id="@+id/third"
+        android:layout_width="93dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/ingredient2"
+        app:layout_constraintStart_toStartOf="@+id/second"
+        app:layout_constraintTop_toBottomOf="@+id/second" />
+
+    <ImageButton
+        android:id="@+id/delete3"
+        android:layout_width="36dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/third"
+        app:layout_constraintEnd_toEndOf="@+id/delete2"
+        app:layout_constraintTop_toTopOf="@+id/third"
+        app:layout_constraintVertical_bias="0.705"
+        app:srcCompat="@android:drawable/btn_dialog" />
+
     <Button
         android:id="@+id/ingredientsButton"
-        android:layout_width="121dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
@@ -165,14 +187,15 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:text="Ingredients chosen"
+        app:fontFamily="@font/comfortaa_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/divider2" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="144dp"
-        android:layout_height="28dp"
+        android:layout_width="168dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -180,17 +203,10 @@
         android:layout_marginTop="28dp"
         android:text="Ingredient Options"
         android:textAppearance="@android:style/TextAppearance.Material.Button"
+        app:fontFamily="@font/comfortaa_bold"
         app:layout_constraintEnd_toEndOf="@+id/proteinList"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@+id/proteinList"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="77dp"
-        android:layout_height="21dp"
-        android:text="Protein"
-        app:layout_constraintBottom_toTopOf="@+id/proteinList"
-        app:layout_constraintStart_toStartOf="@+id/proteinList" />
 
 </android.support.constraint.ConstraintLayout>
