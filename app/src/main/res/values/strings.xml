@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">RecipeApp</string>
 
     <string-array name="Protein">
@@ -26,5 +27,9 @@
         <item>Potatoes</item>
 
     </string-array>
+
+    <string name="recipe1">recipe1</string>
+    <string name="recipe2">recipe1</string>
+    <string name="title_activity_selected_recipe">selected_recipe</string>
 
 </resources>
