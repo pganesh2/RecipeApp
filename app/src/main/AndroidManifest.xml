@@ -17,9 +17,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".selected_recipe"
+
+        <activity android:name="selected_recipe"
             android:label="@string/recipe1">
         </activity>
+
+        <activity android:name="RecipeList"
+            />
+
 
 
     </application>

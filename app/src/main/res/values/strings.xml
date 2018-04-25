@@ -2,7 +2,12 @@
 
     <string name="app_name">RecipeApp</string>
 
+    <string name ="entered_text"> </string>
+    <string name="ingredient2"> </string>
+
+
     <string-array name="Protein">
+        <item> </item>
         <item>Chicken</item>
         <item>Pork</item>
         <item>Beef</item>
@@ -11,6 +16,7 @@
     </string-array>
 
     <string-array name="Veggies">
+        <item> </item>
         <item>Tomato</item>
         <item>Spinach</item>
         <item>Broccoli</item>
@@ -25,6 +31,13 @@
         <item>Corn</item>
         <item>Leeks</item>
         <item>Potatoes</item>
+
+    </string-array>
+
+    <string-array name="Spices">
+        <item> </item>
+        <item>cumin</item>
+        <item>garlic</item>
 
     </string-array>
 
