@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
     void startAPICall() {
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
-                    DownloadManager.Request.Method.GET,
+                    Request.Method.GET,
                     "http://api.openweathermap.org/data/2.5/weather?zip=61820,us&appid="
                             + BuildConfig.API_KEY,
                     null,
