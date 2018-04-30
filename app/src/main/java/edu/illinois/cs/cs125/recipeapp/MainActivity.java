@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent go = new Intent(MainActivity.this, RecipeList.class);
                 Log.i(TAG, "Button clicked");
+                startAPICall();
                 startActivity(go);
             }
         });
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ingredient_selection);
+
+        requestQueue = Volley.newRequestQueue(this);
+
 
 
 
@@ -138,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    "http://api.openweathermap.org/data/2.5/weather?zip=61820,us&appid="
+                    "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken%20breast"
                             + BuildConfig.API_KEY,
                     null,
                     new Response.Listener<JSONObject>() {
