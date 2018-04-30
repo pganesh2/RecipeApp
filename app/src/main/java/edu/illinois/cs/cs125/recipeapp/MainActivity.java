@@ -1,5 +1,6 @@
 package edu.illinois.cs.cs125.recipeapp;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -14,11 +15,25 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
+
+    /** Request queue for our API requests. */
+    private static RequestQueue requestQueue;
 
     Button ingredientsDone;
 
@@ -117,6 +132,32 @@ public class MainActivity extends AppCompatActivity {
     public void display2(View view) {
         Intent startNewActivity = new Intent(this, selected_recipe.class);
         startActivity(startNewActivity);
+    }
+
+    void startAPICall() {
+        try {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                    DownloadManager.Request.Method.GET,
+                    "http://api.openweathermap.org/data/2.5/weather?zip=61820,us&appid="
+                            + BuildConfig.API_KEY,
+                    null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(final JSONObject response) {
+                            try {
+                                Log.d(TAG, response.toString(2));
+                            } catch (JSONException ignored) { }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(final VolleyError error) {
+                    Log.e(TAG, error.toString());
+                }
+            });
+            requestQueue.add(jsonObjectRequest);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
