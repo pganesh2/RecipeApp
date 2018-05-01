@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent go = new Intent(MainActivity.this, RecipeList.class);
                 Log.i(TAG, "Button clicked");
+                startAPICall();
                 startActivity(go);
             }
         });
@@ -59,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Set up the queue for our API requests
+        requestQueue = Volley.newRequestQueue(this);
+
         setContentView(R.layout.ingredient_selection);
 
 
@@ -138,8 +143,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    "http://api.openweathermap.org/data/2.5/weather?zip=61820,us&appid="
-                            + BuildConfig.API_KEY,
+                    "https://api.edamam.com/search?q=chicken&app_id=6d0f0a9c&app_key=53b41806efa48f108c049379b3d29920",
+//                            ,+ BuildConfig.API_KEY
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
