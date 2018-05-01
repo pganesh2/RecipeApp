@@ -28,6 +28,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
@@ -36,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     private static RequestQueue requestQueue;
 
     Button ingredientsDone;
+
+    public String recipeName = " ";
+    public String[] ingredients = new String[100];
 
 
     /**
@@ -152,6 +160,10 @@ public class MainActivity extends AppCompatActivity {
                         public void onResponse(final JSONObject response) {
                             try {
                                 Log.d(TAG, response.toString(2));
+                                String s = response.toString(2);
+                                refine(s);
+//                                final TextView stuff = (TextView) findViewById(R.id.textView6);
+//                                stuff.setText(recipeName);
                             } catch (JSONException ignored) { }
                         }
                     }, new Response.ErrorListener() {
@@ -163,6 +175,27 @@ public class MainActivity extends AppCompatActivity {
             requestQueue.add(jsonObjectRequest);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+
+    void refine (String output) {
+        int counter = 0;
+        JsonParser parser = new JsonParser();
+        JsonObject result = parser.parse(output).getAsJsonObject();
+        JsonArray hits = result.get("hits").getAsJsonArray();
+        for (JsonElement position : hits) {
+            JsonObject obj = position.getAsJsonObject();
+            JsonObject recipe = obj.get("recipe").getAsJsonObject();
+            recipeName = recipe.get("label").getAsString(); // Name of recipe;
+//            JsonArray ingredientLines = result.get("ingredientLines").getAsJsonArray();
+//            for (JsonElement position2 : ingredientLines) {
+//                ingredients[counter] = position2.getAsString();
+//                counter++;
+//                if (counter == 100) {
+//                    break;
+//                }
+//            }
         }
     }
 

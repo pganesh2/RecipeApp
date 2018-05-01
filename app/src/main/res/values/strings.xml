@@ -5,6 +5,8 @@
     <string name ="entered_text"> </string>
     <string name="ingredient2"> </string>
 
+    <string name ="recipeName"> </string>
+
 
     <string-array name="Protein">
         <item> </item>
