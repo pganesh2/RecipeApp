@@ -33,17 +33,21 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "MainActivity";
 
-    /** Request queue for our API requests. */
+    /**
+     * Request queue for our API requests.
+     */
     private static RequestQueue requestQueue;
 
     Button ingredientsDone;
 
     public String recipeName = " ";
-    public String[] ingredients = new String[100];
+    public String[] recipeArray = new String[100];
 
 
     /**
@@ -55,15 +59,28 @@ public class MainActivity extends AppCompatActivity {
         ingredientsDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent go = new Intent(MainActivity.this, RecipeList.class);
-                Log.i(TAG, "Button clicked");
                 startAPICall();
-                startActivity(go);
+
+//                Intent go = new Intent(MainActivity.this, RecipeList.class);
+//
+//                Log.i(TAG, "Button clicked");
+//                Log.i(TAG, "Start API finished...");
+//
+//
+//                String testRecipe = recipeName;
+//                Log.i(TAG, recipeName);
+//                go.putExtra("key", testRecipe);
+//
+//
+//                startActivity(go);
             }
         });
 
     }
 
+    public void setter(String finalRecipe) {
+        recipeName = finalRecipe;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         setContentView(R.layout.ingredient_selection);
-
 
 
         goToRecipes();
@@ -92,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 TextView changingI1 = findViewById(R.id.first);
-                    changingI1.setText(proteinSpinner.getSelectedItem().toString());
+                changingI1.setText(proteinSpinner.getSelectedItem().toString());
             }
 
             @Override
@@ -142,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         Intent startNewActivity = new Intent(this, selected_recipe.class);
         startActivity(startNewActivity);
     }
+
     public void display2(View view) {
         Intent startNewActivity = new Intent(this, selected_recipe.class);
         startActivity(startNewActivity);
@@ -164,7 +181,8 @@ public class MainActivity extends AppCompatActivity {
                                 refine(s);
 //                                final TextView stuff = (TextView) findViewById(R.id.textView6);
 //                                stuff.setText(recipeName);
-                            } catch (JSONException ignored) { }
+                            } catch (JSONException ignored) {
+                            }
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -179,8 +197,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    void refine (String output) {
+    void refine(String output) {
         int counter = 0;
+        int length = 0;
         JsonParser parser = new JsonParser();
         JsonObject result = parser.parse(output).getAsJsonObject();
         JsonArray hits = result.get("hits").getAsJsonArray();
@@ -188,6 +207,8 @@ public class MainActivity extends AppCompatActivity {
             JsonObject obj = position.getAsJsonObject();
             JsonObject recipe = obj.get("recipe").getAsJsonObject();
             recipeName = recipe.get("label").getAsString(); // Name of recipe;
+            recipeArray[length] = recipeName;
+            length++;
 //            JsonArray ingredientLines = result.get("ingredientLines").getAsJsonArray();
 //            for (JsonElement position2 : ingredientLines) {
 //                ingredients[counter] = position2.getAsString();
@@ -197,6 +218,26 @@ public class MainActivity extends AppCompatActivity {
 //                }
 //            }
         }
-    }
+        Random random = new Random();
+        int selection = random.nextInt(length);
+        String temp = recipeArray[selection];
+        Log.i(TAG, "Here is the random version");
+        Log.i(TAG, recipeArray[0]);
+        Log.i(TAG, temp);
+        setter(temp);
+        Intent go = new Intent(MainActivity.this, RecipeList.class);
 
+        Log.i(TAG, "Button clicked");
+        Log.i(TAG, "Start API finished...");
+
+
+        String testRecipe = recipeName;
+        Log.i(TAG, recipeName);
+        go.putExtra("key", testRecipe);
+
+
+        startActivity(go);
+    }
 }
+
+
