@@ -8,9 +8,8 @@
 
     <Button
         android:id="@+id/recipe1"
-        android:layout_width="143dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="211dp"
+        android:layout_height="67dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -20,49 +19,29 @@
         android:text="@string/recipe1"
         android:textStyle="bold"
         app:fontFamily="@font/comfortaa_bold"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toStartOf="@+id/myDivider"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/description1"
-        android:layout_width="183dp"
-        android:layout_height="62dp"
+        android:id="@+id/description"
+        android:layout_width="266dp"
+        android:layout_height="182dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="108dp"
         android:text="@string/description1"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="12sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:fontFamily="@font/comfortaa_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/myDivider"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/recipe2"
-        android:layout_width="143dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginRight="44dp"
-        android:layout_marginTop="8dp"
-        android:onClick="display2"
-        android:text="@string/recipe2"
-        android:textStyle="bold"
-        app:fontFamily="@font/comfortaa_bold"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
-        app:layout_constraintEnd_toStartOf="@+id/myDivider"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/recipe1"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/recipe1"
-        app:layout_constraintTop_toTopOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.487" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/description2"
@@ -71,7 +50,6 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
         android:text="Description of Recipe 2"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="12sp"
@@ -79,37 +57,9 @@
         android:visibility="visible"
         app:fontFamily="@font/comfortaa_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/description1"
+        app:layout_constraintEnd_toEndOf="@+id/description"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/description1"
-        app:layout_constraintTop_toTopOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.005" />
-
-    <View
-        android:id="@+id/myDivider"
-        android:layout_width="1dp"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="204dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="8dp"
-        android:background="?android:attr/listDivider"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider3" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="442dp"
-        android:layout_height="103dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/description" />
 
     <View
         android:id="@+id/divider3"

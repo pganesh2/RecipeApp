@@ -12,5 +12,6 @@ public class selected_recipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selected_recipe);
+
     }
 }
