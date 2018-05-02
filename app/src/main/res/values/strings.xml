@@ -47,5 +47,6 @@
     <string name="recipe1">recipe1</string>
     <string name="recipe2">recipe1</string>
     <string name="title_activity_selected_recipe">selected_recipe</string>
+    <string name="description1">description1</string>
 
 </resources>
