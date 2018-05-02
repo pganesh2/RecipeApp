@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">RecipeApp</string>
+    <string name="app_name">Find a Recipe!</string>
 
     <string name ="entered_text"> </string>
     <string name="ingredient2"> </string>
@@ -11,40 +11,43 @@
 
     <string-array name="Protein">
         <item> </item>
-        <item>Chicken</item>
-        <item>Pork</item>
-        <item>Beef</item>
-        <item>Tofu</item>
-        <item>Lamb</item>
+        <item>chicken</item>
+        <item>fish</item>
+        <item>lamb</item>
+        <item>beef</item>
+        <item>tofu</item>
     </string-array>
 
     <string-array name="Veggies">
         <item> </item>
-        <item>Tomato</item>
-        <item>Spinach</item>
-        <item>Broccoli</item>
-        <item>Green Beans</item>
-        <item>Cucumber</item>
-        <item>Bell Peppers</item>
-        <item>Brussel Sprouts</item>
-        <item>Carrots</item>
-        <item>Coriander</item>
-        <item>Cabbage</item>
-        <item>Cauliflower</item>
-        <item>Corn</item>
-        <item>Leeks</item>
-        <item>Potatoes</item>
+        <item>tomato</item>
+        <item>spinach</item>
+        <item>broccoli</item>
+        <item>green beans</item>
+        <item>cucumber</item>
+        <item>bell peppers</item>
+        <item>brussel sprouts</item>
+        <item>carrots</item>
+        <item>coriander</item>
+        <item>cabbage</item>
+        <item>cauliflower</item>
+        <item>corn</item>
+        <item>leeks</item>
+        <item>potatoes</item>
 
     </string-array>
 
     <string-array name="Spices">
         <item> </item>
-        <item>Cumin</item>
-        <item>Garlic</item>
+        <item>cumin</item>
+        <item>garlic</item>
+        <item>ginger</item>
+        <item>nutmeg</item>
+        <item>cinnamon</item>
 
     </string-array>
 
-    <string name="recipe1">recipe1</string>
+    <string name="recipe1">Find a Recipe!</string>
     <string name="recipe2">recipe1</string>
     <string name="title_activity_selected_recipe">selected_recipe</string>
     <string name="description1">description1</string>

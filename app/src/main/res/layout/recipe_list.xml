@@ -34,7 +34,7 @@
         android:layout_marginTop="108dp"
         android:text="@string/description1"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="12sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
         app:fontFamily="@font/comfortaa_light"
@@ -42,24 +42,6 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="@+id/recipe1"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/description2"
-        android:layout_width="183dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Description of Recipe 2"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        android:visibility="visible"
-        app:fontFamily="@font/comfortaa_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/description"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/description" />
 
     <View
         android:id="@+id/divider3"
