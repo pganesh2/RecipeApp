@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "Button clicked");
                 startAPICall();
                 startActivity(go);
+
             }
         });
 
@@ -215,16 +216,23 @@ public class MainActivity extends AppCompatActivity {
         getRecipe(length);
     }
 
+
     /**
      * gets a random recipe from our recipe array.
      */
     public void getRecipe(int length) {
+        final Button newRecipe = (Button) findViewById(R.id.recipe1);
+        Log.i(TAG, "THIS IS BUTTON");
+        Log.i(TAG, newRecipe.toString());
 
-        Log.i(TAG, "recipe array is here!");
+        //gets random integer for array.
+        Random random = new Random();
+        int randNum = random.nextInt(length);
+
+        //sets recipe to a random array index.
+        Log.i(TAG, "RECIPE NAME HERE");
         Log.i(TAG, recipeArray[0]);
-        Intent intent = new Intent(MainActivity.this, RecipeList.class);
-        intent.putExtra("string-array", recipeArray);
-        MainActivity.this.startActivity(intent);
+        newRecipe.setText(recipeArray[0]);
 
     }
 
