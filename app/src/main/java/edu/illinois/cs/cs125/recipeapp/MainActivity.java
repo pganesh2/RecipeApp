@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ButtonBarLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,7 +34,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
+
+    String[] recipeArray = new String[100];
+
 
     public static final String TAG = "MainActivity";
 
@@ -47,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     /**
-     * takes user to list of recipes containing selected ingredients.
+     * "Ingredients Chosen" clicked takes user to list of recipes.
      */
     public void goToRecipes() {
+
         Log.i(TAG, "goToRecipes ran");
         ingredientsDone = findViewById(R.id.ingredientsButton);
         ingredientsDone.setOnClickListener(new View.OnClickListener() {
@@ -83,11 +90,15 @@ public class MainActivity extends AppCompatActivity {
         final Spinner spicesSpinner = findViewById(R.id.spicesList);
 
 
+        /**
+         * makes the protein drop down list.
+         */
         ArrayAdapter<String> proteinAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Protein));
         proteinAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         proteinSpinner.setAdapter(proteinAdapter);
 
+        //sets the protein based on user selection.
         proteinSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -101,11 +112,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //veggie drop down list
         ArrayAdapter<String> veggieAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Veggies));
         veggieAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         veggieSpinner.setAdapter(veggieAdapter);
 
+        //sets veggie based on user selection.
         veggieSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -118,11 +131,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //spices drop down list.
         ArrayAdapter<String> spicesAdapter = new ArrayAdapter<String>(MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Spices));
         spicesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spicesSpinner.setAdapter(spicesAdapter);
 
+        //sets spices based on user selection.
         spicesSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -181,22 +196,36 @@ public class MainActivity extends AppCompatActivity {
 
     void refine (String output) {
         int counter = 0;
+        int length = 0;
         JsonParser parser = new JsonParser();
         JsonObject result = parser.parse(output).getAsJsonObject();
         JsonArray hits = result.get("hits").getAsJsonArray();
+
+
+
         for (JsonElement position : hits) {
             JsonObject obj = position.getAsJsonObject();
             JsonObject recipe = obj.get("recipe").getAsJsonObject();
             recipeName = recipe.get("label").getAsString(); // Name of recipe;
-//            JsonArray ingredientLines = result.get("ingredientLines").getAsJsonArray();
-//            for (JsonElement position2 : ingredientLines) {
-//                ingredients[counter] = position2.getAsString();
-//                counter++;
-//                if (counter == 100) {
-//                    break;
-//                }
-//            }
+            recipeArray[length] = recipeName;
+            Log.i(TAG, "HERE1");
+            Log.i(TAG, recipeArray[length]);
+            length++;
         }
+        getRecipe(length);
+    }
+
+    /**
+     * gets a random recipe from our recipe array.
+     */
+    public void getRecipe(int length) {
+
+        Log.i(TAG, "recipe array is here!");
+        Log.i(TAG, recipeArray[0]);
+        Intent intent = new Intent(MainActivity.this, RecipeList.class);
+        intent.putExtra("string-array", recipeArray);
+        MainActivity.this.startActivity(intent);
+
     }
 
 }
